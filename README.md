@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/ilyas0851/Internship/_apis/build/status%2Fgitlen1.Internship_devops?branchName=main)](https://dev.azure.com/ilyas0851/Internship/_build/latest?definitionId=1&branchName=main)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
