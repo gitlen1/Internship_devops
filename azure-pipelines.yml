@@ -34,7 +34,7 @@ steps:
   displayName: 'Deploy to Azure Web App'
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1'
+    azureSubscription: 'Azure subscription 1 (b993e077-edb2-4d13-9503-74813054ce29)'
     appType: 'webAppLinux'
     WebAppName: 'Internship127'
     package: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
