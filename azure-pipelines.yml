@@ -10,16 +10,13 @@ steps:
     versionSpec: '16.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm ci
+- script: npm ci
   displayName: 'Install Dependencies'
 
-- script: |
-    npm run build
+- script: npm run build
   displayName: 'Build'
 
-- script: |
-    npm run test
+- script: npm run test
   displayName: 'Run Tests'
 
 - task: ArchiveFiles@2
@@ -27,8 +24,17 @@ steps:
   inputs:
     rootFolderOrFile: '$(Build.SourcesDirectory)'
     includeRootFolder: false
+    excludeRootFolder: false
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+    excludePatterns: '**/node_modules/**;**/node_modules/**/*;**/.git/**;**/.gitignore;**/*.md'
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
 
 
 
